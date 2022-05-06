@@ -47,6 +47,7 @@ $matches = [
     <title>Snack 1</title>
 </head>
 <body>
+    <h1>Snack 1</h1>
     <p>
         <?php
             for ($i=0; $i < count($matches) ; $i++) { 
@@ -62,6 +63,33 @@ $matches = [
 ## Snack 2
 Passare come parametri GET name, mail e age e verificare (cercando i metodi che non conosciamo nella documentazione) che name sia più lungo di 3 caratteri, che mail contenga un punto e una chiocciola e che age sia un numero. Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato”
 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snack 2</title>
+</head>
+<body>
+<h1>Snack 2</h1>
+    <form method="GET">
+        <div>
+            <label for="">Name</label>
+            <input style="margin-left: 15px;" type="text" name="name">
+        </div>
+        <div>
+            <label for="">Email</label>
+            <input style="margin-left: 15px;" type="text" name="email">
+        </div>
+        <div>
+            <label for="">Age</label>
+            <input style="margin-left: 15px;" type="text" name="age">
+        </div>
+        <button style="margin-top: 15px;" type="submit">Invia</button>
+    </form>
+</body>
+</html>
 
 <?php
 
@@ -102,9 +130,11 @@ if ($validazioneName && $validazioneEmail && $validazioneAge ) {
 
 ?>
 
-<style>
-    
-</style>
+
+<!--
+## Snack 4
+Creare un array con 15 numeri casuali, tenendo conto che l’array non dovrà contenere lo stesso numero più di una volta
+-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -112,30 +142,35 @@ if ($validazioneName && $validazioneEmail && $validazioneAge ) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snack 2</title>
+    <title>Document</title>
 </head>
 <body>
-    <form method="GET">
-        <div>
-            <label for="">Name</label>
-            <input style="margin-left: 15px;" type="text" name="name">
-        </div>
-        <div>
-            <label for="">Email</label>
-            <input style="margin-left: 15px;" type="text" name="email">
-        </div>
-        <div>
-            <label for="">Age</label>
-            <input style="margin-left: 15px;" type="text" name="age">
-        </div>
-        <button style="margin-top: 15px;" type="submit">Invia</button>
-    </form>
+    <h1>Snack 4</h1>
 </body>
 </html>
 
+
+<?php
+    $arrayNumeri = [];
+    $random = 0;
+
+    for ($i=0; $i <= 14 ; $i++) { 
+        do{
+            $random = rand (1, 20);
+        }while (in_array($random, $arrayNumeri) == true);
+
+        $arrayNumeri[$i] = $random;
+    }
+
+    echo '<pre>'; print_r($arrayNumeri); echo '</pre>';
+?>
+
+
 <!--
-## Snack 4
-Creare un array con 15 numeri casuali, tenendo conto che l’array non dovrà contenere lo stesso numero più di una volta
+
+
+
+
 ## Snack 7
 Creare un array contenente qualche alunno di un’ipotetica classe. Ogni alunno avrà Nome, Cognome e un array contenente i suoi voti scolastici. Stampare Nome, Cognome e la media dei voti di ogni alunno.
 -->
