@@ -40,12 +40,14 @@ $matches = [
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snack 1</title>
 </head>
+
 <body>
     <h1>Snack 1</h1>
     <p>
@@ -56,6 +58,7 @@ $matches = [
         ?>
     </p>
 </body>
+
 </html>
 
 
@@ -65,14 +68,16 @@ Passare come parametri GET name, mail e age e verificare (cercando i metodi che 
 -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snack 2</title>
 </head>
+
 <body>
-<h1>Snack 2</h1>
+    <h1>Snack 2</h1>
     <form method="GET">
         <div>
             <label for="">Name</label>
@@ -89,6 +94,7 @@ Passare come parametri GET name, mail e age e verificare (cercando i metodi che 
         <button style="margin-top: 15px;" type="submit">Invia</button>
     </form>
 </body>
+
 </html>
 
 <?php
@@ -138,15 +144,18 @@ Creare un array con 15 numeri casuali, tenendo conto che l’array non dovrà co
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h1>Snack 4</h1>
 </body>
+
 </html>
 
 
@@ -166,11 +175,64 @@ Creare un array con 15 numeri casuali, tenendo conto che l’array non dovrà co
 ?>
 
 
+
 <!--
-
-
-
-
 ## Snack 7
 Creare un array contenente qualche alunno di un’ipotetica classe. Ogni alunno avrà Nome, Cognome e un array contenente i suoi voti scolastici. Stampare Nome, Cognome e la media dei voti di ogni alunno.
 -->
+
+<?php
+
+    $alunni = [
+        [
+            'nome' => 'Piero',
+            'cognome' => 'Pierini',
+            'voti' => [4, 8, 5, 10],
+        ],
+        [
+            'nome' => 'Giovanni',
+            'cognome' => 'Giovannini',
+            'voti' => [8, 2, 6, 4],
+        ],
+        [
+            'nome' => 'Pinco',
+            'cognome' => 'Pallini',
+            'voti' => [3, 7, 1, 10],
+        ],
+        [
+            'nome' => 'Franco',
+            'cognome' => 'Franchini',
+            'voti' => [5, 7, 4, 8],
+        ]
+    ];
+    
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Snack 7</h1>
+    <?php
+    for ($i=0; $i < count($alunni) ; $i++) {  
+    ?>
+
+        <p style="margin-top: 40px;">Nome: <?php echo $alunni[$i]["nome"];?></p>
+        <p>Cognome: <?php echo $alunni[$i]["cognome"];?></p>
+        <p>Media dei voti: <?php echo (array_sum($alunni[$i]["voti"]) / count($alunni[$i]["voti"]));?></p>         
+
+    <?php 
+    } 
+    ?>
+    
+</body>
+
+</html>
